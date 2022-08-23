@@ -1,3 +1,5 @@
+from operator import itemgetter
+
 def search(sequence, expected, finder):
     for elem in sequence:
         if finder(elem) == expected:
@@ -20,3 +22,6 @@ print(search(friends, "Moses", get_friend_name))
 #alternative lambda function
 
 print(search(friends, "Efya", lambda friend: friend["name"]))
+
+#using itemgetter function
+print(search(friends, "Moses", itemgetter("name")))
